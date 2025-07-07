@@ -40,13 +40,13 @@ public class SpringbootprojectApplication {
 		user2.setStatus("java");
 
 //		save multiple object
-		User resultUser = userRepository.save(user2);
-		List<User> users= List.of(user2,user1);
-		Iterable<User> result =userRepository.saveAll(users);
-
-		result.forEach(user -> {
-			System.out.println(user);
-		});
+//		User resultUser = userRepository.save(user2);
+//		List<User> users= List.of(user2,user1);
+//		Iterable<User> result =userRepository.saveAll(users);
+//
+//		result.forEach(user -> {
+//			System.out.println(user);
+//		});
 
 //		System.out.println("saved user" +resultUser);
 		System.out.println("done");
@@ -84,5 +84,19 @@ public class SpringbootprojectApplication {
 //		allUsers.forEach(user -> System.out.println(user) );
 //		userRepository.deleteAll(allUsers);
 //
+//		List<User> users = userRepository.findByName("mohit");
+//		users.forEach(e -> System.out.println(e));
+//		List<User> users = userRepository.findByNameAndCity("mohit","city2");
+//		users.forEach(e -> System.out.println(e));
+
+		List<User> allUser = userRepository.getAllUser();
+		allUser.forEach(user -> System.out.println(user));
+
+		System.out.println("--------------------------------------------------------------");
+		List<User> userByName = userRepository.getUserByName("mohit","city2");
+		userByName.forEach(user -> System.out.println(user));
+		System.out.println("--------------------------------------------------------------");
+
+		userRepository.getUsers().forEach(user -> System.out.println(user));
 	}
 }
