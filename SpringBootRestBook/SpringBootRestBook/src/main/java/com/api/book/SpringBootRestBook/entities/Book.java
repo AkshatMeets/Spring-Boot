@@ -1,5 +1,6 @@
 package com.api.book.SpringBootRestBook.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.apache.tomcat.util.http.parser.Authorization;
 import org.springframework.stereotype.Component;
@@ -13,13 +14,16 @@ public class Book {
     @Column(name = "book_id")
     private int id;
     private String title;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JsonManagedReference
     private Author author;
 
-    public Book(int id, String title, Author author) {
-        this.id = id;
-        this.title = title;
-        this.author = author;
-    }
+//    public Book(int id, String title, Author author) {
+//        this.id = id;
+//        this.title = title;
+//        this.author = author;
+//    }
 
 
     public Book() {
