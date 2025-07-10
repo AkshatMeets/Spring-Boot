@@ -1,0 +1,17 @@
+<!DOCTYPE unspecified PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>loop example</title>
+</head>
+<body>
+	<h1>Conditional statement</h1>
+
+	<h1>Use is <span th:style="${isActive}? 'color-green':'color:red'" 
+					th:text="${isActive}? 'ACTIVE' : 'NOT-ACTIVE'"></span></h1>
+	
+	<h1 th:if="${gender}=='M'">Male</h1>
+	<h1 th:unless="${gender}=='M'">Female</h1>
+	
+</body>
+
+</html>

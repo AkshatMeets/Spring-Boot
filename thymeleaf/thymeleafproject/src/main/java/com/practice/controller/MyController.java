@@ -34,5 +34,25 @@ public class MyController {
     	
     	return "iterate";
     }
-   
+    
+   //handler for conditional statement
+    
+    @GetMapping("/condition")
+    public String conditionHandler(Model model) {
+    	System.out.println("conditinal handler executed...");
+    	model.addAttribute("isActive",false);
+    	model.addAttribute("gender","M");
+    	return "condition";
+    }
+    
+    //handler for including fragment
+    
+    @GetMapping("/service")
+    public String serviceHandler(Model m) {
+    	
+    	m.addAttribute("title","I like king");
+    	m.addAttribute("subtitle",LocalDate.now().toString());
+    	return "service";
+    }
+    
 }
