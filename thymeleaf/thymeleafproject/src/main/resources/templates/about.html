@@ -1,0 +1,24 @@
+<!DOCTYPE unspecified PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Document</title>
+</head>
+<body>
+	<h1>About Page</h1>
+	
+	<h1 th:text="${#strings.toUpperCase(name)}"></h1>
+	<p>length of the name is <span th:text=${#strings.length(name)}></span></p>
+	<h2 th:text=${currentDate}></h2>
+	<h2>Name of the Owner is :<span th:text=${name}></span></h2>
+	<div th:with="a=5,b=4,n=${name}">
+		<h1>Value of a is : <span th:text="${a}"></span></h1>
+		<h1 th:text="'value of b is '+${b}"></h1>
+		<h1>value of n is <span th:text=${n}></span></h1>
+		<h2 th:text="'sum of '+${a}+' and '+${b}+' is '+${a+b}"></h2>
+		
+	</div>
+	
+	
+</body>
+
+</html>
