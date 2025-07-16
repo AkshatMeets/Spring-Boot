@@ -49,7 +49,7 @@ public class App
         Session session=Session.getInstance(properties, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("akshatmehta222@gmail.com","lnna kixu cbir fjzm");
+                return new PasswordAuthentication("your_email","your_password");
             }
         });
 
